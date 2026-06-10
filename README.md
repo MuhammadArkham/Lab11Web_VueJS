@@ -15,14 +15,14 @@ Memahami fundamental reaktivitas *Framework Frontend Vue.js* dan merakit aplikas
 3. **Render UI**: Membuka arsitektur kerangka dasar `App.vue` dan melakukan kompilasi peladen dev lokal (Vite Dev Server).
 
 
-### 💡 Pertanyaan dan Tugas
+### Pertanyaan dan Tugas
 > **Pertanyaan:**  
 > Selesaikan program VueJS Dasar sesuai Langkah-langkah yang ada.
 > 
 > **Jawaban & Implementasi:**  
 > Vue Framework telah ter-_install_ dengan aman tanpa ada galat _dependencies_, dan halaman pembuka Vue merespon dengan sangat mulus di sisi _Localhost_.
 
-### 📸 Screenshot Hasil Kerja
+### Screenshot Hasil Kerja
 > **Silakan ganti tag `#` di bawah ini dengan URL gambar Anda**
 > ![Hasil Praktikum](#)
 
@@ -39,7 +39,7 @@ Mengonfigurasi Vue.JS menjadi *Single Page Application* murni menggunakan Modul 
 3. **Komponen Dinamis**: Memanfaatkan _tag_ elemen khusus Vue `<router-view>` untuk membongkar pasang modul antarmuka tanpa perlu proses *Hard Reload*.
 
 
-### 💡 Pertanyaan dan Tugas
+### Pertanyaan dan Tugas
 > **Pertanyaan:**  
 > 1. Selesaikan semua langkah praktikum di atas.
 > 2. Tambahkan satu rute baru (/about) beserta komponen About.js baru yang berisi profil singkat Anda (Nama, NIM, Kelas, dan Foto/Avatar). Masukkan tautan rutenya ke dalam menu navigasi atas pada index.html.
@@ -50,7 +50,7 @@ Mengonfigurasi Vue.JS menjadi *Single Page Application* murni menggunakan Modul 
 > 2. Komponen _profile_ buatan kustom `About.js` dan _Router Link_ telah didaftarkan di Menu Atas. 
 > 3. Perpindahan halaman dipastikan tidak mengalami _refresh_ utuh (*Zero Reload*).
 
-### 📸 Screenshot Hasil Kerja
+### Screenshot Hasil Kerja
 > **Silakan ganti tag `#` di bawah ini dengan URL gambar Anda**
 > ![Hasil Praktikum](#)
 
@@ -67,7 +67,7 @@ Mencegah Penyusup tanpa identitas masuk secara ilegal ke Rute rahasia (*Admin Pa
 3. **Global Navigation Guard**: Menyisipkan kode `router.beforeEach` sebagai "satpam". Ia akan memeriksa izin jalan (`requiresAuth`), dan memblokir akses jika *Token* gagal ditemukan.
 
 
-### 💡 Pertanyaan dan Tugas
+### Pertanyaan dan Tugas
 > **Pertanyaan:**  
 > Analisis Alur Kerja `router.beforeEach` dan Axios HTTP Post. (Modul 13)
 > 
@@ -75,7 +75,7 @@ Mencegah Penyusup tanpa identitas masuk secara ilegal ke Rute rahasia (*Admin Pa
 > - **`router.beforeEach`**: Berfungsi layaknya gerbang tol otomatis di antarmuka (Client-Side). Jika pengguna tak memiliki karcis sesi di _Local Storage_, ia dipaksa putar balik ke rute `/login`.
 > - **Axios HTTP Post**: Fungsi ini mengemas ID dan Password, menyepakete data, lalu berbisik (_Request_) kepada Backend API CI4 guna ditukarkan dengan Kunci Keamanan Baru (*Token*).
 
-### 📸 Screenshot Hasil Kerja
+### Screenshot Hasil Kerja
 > **Silakan ganti tag `#` di bawah ini dengan URL gambar Anda**
 > ![Hasil Praktikum](#)
 
@@ -92,7 +92,7 @@ Mengapa harus dilakukan? Karena meskipun Vue memblokir UI dengan _Guards_ di Mod
 2. **Vue Axios Interceptor (Client Side)**: Daripada menempelkan Token secara manual satu-per-satu di file _Component_, Axios dikonfigurasi secara global. Setiap kali ada _Request_ berjalan, ia diam-diam disuntikkan parameter `Authorization: Bearer <T0K3N>` sebelum menyeberang menuju CI4 Server.
 
 
-### 💡 Pertanyaan dan Tugas
+### Pertanyaan dan Tugas
 > **Pertanyaan:**  
 > Kesimpulan Perbedaan Navigation Guards (Vue) vs Filters (CI4). (Modul 14)
 > 
@@ -101,7 +101,7 @@ Mengapa harus dilakukan? Karena meskipun Vue memblokir UI dengan _Guards_ di Mod
 > - **CodeIgniter Filters (Sisi Server):** Merupakan **Benteng Pertahanan Utama (Data/Logika Core)**. Segala *query* masuk ditahan mutlak oleh Backend jika *Token Autentikasi* tidak sah.
 > *Kesimpulan*: Penggabungan kedua teknologi ini menjadikan sistem SPA sangat kebal (*End-to-End Security*).
 
-### 📸 Screenshot Hasil Kerja
+### Screenshot Hasil Kerja
 > **Silakan ganti tag `#` di bawah ini dengan URL gambar Anda**
 > ![Hasil Praktikum](#)
 
