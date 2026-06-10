@@ -1,23 +1,21 @@
 const Login = {
     template: `
-        <div class="login-container">
-            <div class="login-box">
-                <h2>Form Login Admin</h2>
-                <form @submit.prevent="handleLogin">
-                    <div class="form-group">
-                        <label>Username / Email</label>
-                        <input type="text" v-model="username" required placeholder="admin@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" v-model="password" required placeholder="admin123">
-                    </div>
-                    <button type="submit" class="btn-login" :disabled="isLoading">
-                        {{ isLoading ? 'Memproses...' : 'Login' }}
-                    </button>
-                    <div v-if="errorMsg" class="error-msg">{{ errorMsg }}</div>
-                </form>
-            </div>
+        <div id="login-wrapper" style="box-shadow: 0 10px 25px rgba(0,0,0,0.05); padding: 40px; border-radius: 16px; background: #fff; margin-top: 20px;">
+            <h1 style="color: #2b6cb0; text-align: center; margin-bottom: 30px;">Form Login Admin</h1>
+            <form @submit.prevent="handleLogin">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-weight: 600; color: #4a5568; margin-bottom: 8px;">Username / Email</label>
+                    <input type="text" v-model="username" required placeholder="admin@email.com" style="width: 100%; padding: 12px 16px; background: #f7fafc; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.2s;">
+                </div>
+                <div style="margin-bottom: 25px;">
+                    <label style="display: block; font-weight: 600; color: #4a5568; margin-bottom: 8px;">Password</label>
+                    <input type="password" v-model="password" required placeholder="admin123" style="width: 100%; padding: 12px 16px; background: #f7fafc; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.2s;">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 16px; background: #4299e1; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.3s;" :disabled="isLoading">
+                    {{ isLoading ? 'Memproses...' : 'Login' }}
+                </button>
+                <div v-if="errorMsg" class="error-msg" style="margin-top: 15px; padding: 10px; background: #fed7d7; color: #822727; border-radius: 6px; text-align: center; font-size: 14px;">{{ errorMsg }}</div>
+            </form>
         </div>
     `,
     data() {

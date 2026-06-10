@@ -62,9 +62,11 @@ const ArtikelList = {
                             <p style="margin-top: 5px;"><small style="color: #718096;">{{ item.isi ? item.isi.substring(0, 80) + '...' : '' }}</small></p>
                         </td>
                         <td><span style="background: #ebf8ff; color: #3182ce; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">{{ statusText(item.status) }}</span></td>
-                        <td>
-                            <a href="#" class="btn btn-primary" style="padding: 5px 10px; font-size: 12px; margin-right: 5px;" @click.prevent="edit(item)">Edit</a>
-                            <a href="#" class="btn btn-danger" style="padding: 5px 10px; font-size: 12px;" @click.prevent="hapus(index, item.id)">Hapus</a>
+                        <td style="vertical-align: middle;">
+                            <div style="display: flex; gap: 8px;">
+                                <a href="#" class="btn btn-primary" style="padding: 6px 0; font-size: 12px; width: 65px; text-align: center; display: inline-block; background: #4299e1; color: white; border-radius: 4px; text-decoration: none;" @click.prevent="edit(item)">Edit</a>
+                                <a href="#" class="btn btn-danger" style="padding: 6px 0; font-size: 12px; width: 65px; text-align: center; display: inline-block; background: #f56565; color: white; border-radius: 4px; text-decoration: none;" @click.prevent="hapus(index, item.id)">Hapus</a>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
