@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VueJS Artikel - Pemrograman Web 2</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.0">
     <!-- VueJS 3 CDN -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- Axios CDN -->
@@ -19,7 +19,7 @@
                 <h1>Layout Sederhana (VueJS SPA)</h1>
             </header>
             <nav>
-                <router-link to="/" active-class="active">Home</router-link>
+                <router-link to="/" exact-active-class="active">Home</router-link>
                 <router-link to="/artikel" active-class="active">Artikel</router-link>
                 <router-link to="/about" active-class="active">About</router-link>
                 <router-link v-if="!isLoggedIn" to="/login" active-class="active" style="float:right;">Login</router-link>
@@ -32,15 +32,15 @@
                 </section>
                 <aside id="sidebar">
                     <div class="widget-box">
-                        <h3 class="title">Widget Header</h3>
+                        <h3 class="title">Tautan Berguna</h3>
                         <ul>
-                            <li><a href="#">Widget Link</a></li>
-                            <li><a href="#">Widget Link</a></li>
+                            <li><a href="https://vuejs.org/" target="_blank">Dokumentasi VueJS</a></li>
+                            <li><a href="https://codeigniter.com/" target="_blank">API Backend (CI4)</a></li>
                         </ul>
                     </div>
                     <div class="widget-box">
-                        <h3 class="title">Widget Text</h3>
-                        <p>Vestibulum lorem elit, iaculis in nisl volutpat, malesuada tincidunt arcu.</p>
+                        <h3 class="title">Info Singkat</h3>
+                        <p>Aplikasi ini adalah <strong>Single Page Application (SPA)</strong> yang dibangun menggunakan VueJS 3. Berkomunikasi dengan server CodeIgniter 4 melalui REST API dan Axios.</p>
                     </div>
                 </aside>
             </section>
@@ -51,13 +51,13 @@
     </div>
 
     <!-- Script Komponen -->
-    <script src="assets/js/components/Home.js"></script>
-    <script src="assets/js/components/ArtikelList.js"></script>
-    <script src="assets/js/components/ArtikelForm.js"></script>
-    <script src="assets/js/components/About.js"></script>
-    <script src="assets/js/components/Login.js"></script>
+    <script src="assets/js/components/Home.js?v=3.0"></script>
+    <script src="assets/js/components/ArtikelList.js?v=3.0"></script>
+    <script src="assets/js/components/ArtikelForm.js?v=3.0"></script>
+    <script src="assets/js/components/About.js?v=3.0"></script>
+    <script src="assets/js/components/Login.js?v=3.0"></script>
 
     <!-- Entry Point Aplikasi -->
-    <script src="assets/js/app.js"></script>
+    <script src="assets/js/app.js?v=3.0"></script>
 </body>
 </html>

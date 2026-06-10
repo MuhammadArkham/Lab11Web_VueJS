@@ -1,21 +1,19 @@
 // About Component - Profil Mahasiswa
 const About = {
     template: `
-        <div class="about-container">
-            <div class="avatar">MA</div>
-            <h2>Profil Mahasiswa</h2>
-            <div class="info">
-                <p><strong>Nama:</strong> Muhammad Arkhamullah Rifai Asshidiq</p>
-                <p><strong>NIM:</strong> 312410545</p>
-                <p><strong>Kelas:</strong> TI.24.A.5</p>
-                <p><strong>Mata Kuliah:</strong> Pemrograman Web 2</p>
-                <p><strong>Universitas:</strong> Universitas Pelita Bangsa</p>
+        <div class="about-container" style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #edf2f7; text-align: center; max-width: 600px; margin: 0 auto;">
+            <div class="avatar" style="width: 100px; height: 100px; background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 36px; font-weight: bold; margin: 0 auto 20px; box-shadow: 0 10px 15px rgba(66,153,225,0.3);">MA</div>
+            <h2 style="color: #2d3748; margin-bottom: 30px;">Profil Mahasiswa</h2>
+            <div class="info" style="text-align: left; background: #f7fafc; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+                <p style="margin-bottom: 12px; border-bottom: 1px solid #edf2f7; padding-bottom: 8px;"><strong style="color: #4a5568; display: inline-block; width: 120px;">Nama:</strong> <span style="color: #2b6cb0; font-weight: 600;">Muhammad Arkhamullah Rifai Asshidiq</span></p>
+                <p style="margin-bottom: 12px; border-bottom: 1px solid #edf2f7; padding-bottom: 8px;"><strong style="color: #4a5568; display: inline-block; width: 120px;">NIM:</strong> <span style="color: #718096;">312410545</span></p>
+                <p style="margin-bottom: 12px; border-bottom: 1px solid #edf2f7; padding-bottom: 8px;"><strong style="color: #4a5568; display: inline-block; width: 120px;">Kelas:</strong> <span style="color: #718096;">TI.24.A.5</span></p>
+                <p style="margin-bottom: 12px; border-bottom: 1px solid #edf2f7; padding-bottom: 8px;"><strong style="color: #4a5568; display: inline-block; width: 120px;">Mata Kuliah:</strong> <span style="color: #718096;">Pemrograman Web 2</span></p>
+                <p style="margin-bottom: 0;"><strong style="color: #4a5568; display: inline-block; width: 120px;">Universitas:</strong> <span style="color: #718096;">Universitas Pelita Bangsa</span></p>
             </div>
-            <div class="info" style="margin-top:15px;">
-                <h3 style="color:#3152d6; margin-bottom:10px;">Tentang Aplikasi</h3>
-                <p>Aplikasi ini dibuat sebagai tugas praktikum Pemrograman Web 2. 
-                   Frontend menggunakan VueJS 3 dengan Vue Router untuk navigasi SPA, 
-                   dan backend menggunakan REST API CodeIgniter 4.</p>
+            <div class="info" style="text-align: left; padding: 0 10px;">
+                <h3 style="color: #3182ce; margin-bottom: 10px; font-size: 18px;">Tentang Aplikasi</h3>
+                <p style="color: #718096; line-height: 1.6; font-size: 14px;">Aplikasi ini dibuat sebagai tugas akhir praktikum Pemrograman Web 2. Frontend dibangun menggunakan arsitektur modern VueJS 3 SPA (Single Page Application), tersinkronisasi penuh dengan backend REST API CodeIgniter 4.</p>
             </div>
         </div>
     `
