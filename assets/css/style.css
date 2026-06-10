@@ -1,0 +1,233 @@
+/* Base CI4 Style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    padding: 20px;
+}
+
+header h1 {
+    color: #b0b0b0;
+}
+
+nav {
+    background-color: #1e73be;
+    display: flex;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-weight: bold;
+}
+
+nav a:hover, nav a.router-link-active {
+    background-color: #10528e;
+}
+
+#wrapper {
+    display: flex;
+    padding: 20px;
+}
+
+#main {
+    flex: 3;
+    padding-right: 20px;
+}
+
+#main h1, #main h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#main hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+#sidebar {
+    flex: 1;
+}
+
+.widget-box {
+    margin-bottom: 20px;
+}
+
+.widget-box .title {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.widget-box ul {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.widget-box ul li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.widget-box ul li a {
+    text-decoration: none;
+    color: #555;
+}
+
+.widget-box p {
+    padding: 10px;
+    color: #666;
+    line-height: 1.6;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    padding: 15px 20px;
+    font-size: 14px;
+}
+
+/* Admin Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #3d64b4;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/* Button */
+.btn-edit, .btn-delete, #btn-tambah, #btnSimpan, button {
+    padding: 5px 10px;
+    background-color: #3d64b4;
+    color: white;
+    text-decoration: none;
+    border: 1px solid #3d64b4;
+    border-radius: 3px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-edit:hover, .btn-delete:hover, #btn-tambah:hover, button:hover {
+    opacity: 0.8;
+}
+
+/* Forms */
+#form-data {
+    width: 100%;
+}
+
+form input[type="text"],
+form select,
+form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form div {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* Modal */
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 600px;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
+}
+
+/* Alert message */
+.alert {
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Login Form Styles */
+.login-container { display: flex; justify-content: center; align-items: center; padding: 40px 0; }
+.login-box { width: 350px; padding: 25px; border: 1px solid #ccc; border-radius: 8px; background-color: #ffffff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.login-box h2 { margin-top: 0; margin-bottom: 20px; text-align: center; color: #333; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+.form-group input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+.btn-login { width: 100%; padding: 10px; background-color: #3152d6; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+.btn-login:hover { background-color: #203ca3; }
+.error-msg { color: red; font-size: 14px; text-align: center; margin-top: 15px; }
