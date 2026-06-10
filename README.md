@@ -13,6 +13,12 @@ Repository ini memuat hasil praktikum **Modul 11, 12, 13, dan 14** mengenai impl
 **3. Lakukan pengujian perpindahan halaman menu (Beranda, Kelola Artikel, dan About) dan pastikan browser tidak melakukan hard-reload (SPA bekerja).**
 **Jawaban:** Hasil uji coba membuktikan perpindahan antara halaman Home, Artikel, dan About terjadi secara instan dengan mengambil komponen secara dinamis ke dalam `<router-view>` tanpa menimbulkan _hard-reload_ pada web _browser_.
 
+
+
+### Screenshot Hasil Kerja
+> **Ambil gambar screenshot jalannya program di web browser dan taruh di sini**
+> ![Screenshot](#)
+
 ---
 
 ## Praktikum 13 & 14: SPA Security, API Token Authentication & Interceptors
@@ -33,3 +39,8 @@ Perbedaan mendasarnya terletak pada letak pertahanannya:
 - **CodeIgniter Filters (Sisi Server):** Ini adalah **Benteng Pertahanan Utama (Data)**. Sekalipun seseorang berhasil memanipulasi _browser_ untuk bisa membuka halaman Vue, ketika ia mencoba memanipulasi data melalui API Endpoint, permintaan tersebut akan langsung menembus ke server CI4. Di titik inilah `ApiAuthFilter` akan membanting pintu dan memblokir request tersebut dengan pesan *Error 401 Unauthorized* jika tidak disertai dengan _Token_ otentikasi yang sah.
 
 Kombinasi antara _Navigation Guards_ (menyembunyikan tampilan) dan _CI4 Filters_ (melindungi data) menghasilkan sistem aplikasi SPA yang kokoh secara menyeluruh (_End-to-End Security_).
+
+
+### Screenshot Hasil Kerja
+> **Ambil gambar screenshot jalannya program di web browser dan taruh di sini**
+> ![Screenshot](#)
