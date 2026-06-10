@@ -1,46 +1,53 @@
-# Lab11Web_VueJS - Pemrograman Web 2 (SPA & Security)
+# Praktikum 11 & 12: VueJS (Komponen dan Routing SPA)
 
-Repository ini memuat hasil praktikum **Modul 11, 12, 13, dan 14** mengenai implementasi VueJS sebagai *Single Page Application* (SPA), Vue Router, Axios Interceptors, dan perlindungan rute (*Navigation Guards*).
+## Penjelasan Praktikum
+Repositori ini adalah bagian antarmuka pengguna (_Frontend_) dari aplikasi yang dibangun secara terpisah menggunakan _Framework_ Vue.JS 3. Di tahap ini, Vue dikonfigurasi sebagai *Single Page Application* (SPA), sehingga navigasi diurus seutuhnya oleh peramban klien via `Vue Router`.
 
-## Praktikum 11 & 12: Dasar VueJS & Vue Router (SPA)
-### Jawaban Pertanyaan dan Tugas
-**1. Selesaikan semua langkah praktikum di atas.**
-**Jawaban:** Langkah-langkah inisiasi Vue, *binding* data, *event handling*, hingga perakitan *Vue Router* telah dikerjakan dan berjalan normal.
+## Langkah-langkah Utama
+- Inisialisasi proyek dan perakitan struktur direktori Vue.
+- Integrasi *Vue Router* dan pendefinisian rute di `app.js`.
+- Pembuatan Komponen Vue (seperti `Home.js`, `Artikel.js`, `About.js`).
+- Menarik (fetch) data menggunakan `Axios` HTTP Client menuju API CI4.
 
-**2. Tambahkan satu rute baru (/about) beserta komponen About.js baru yang berisi profil singkat Anda. Masukkan tautan rutenya ke dalam menu navigasi atas pada index.html.**
-**Jawaban:** Rute `/about` sukses di daftarkan di `app.js` dan komponen `About.js` telah dibuat. Tautan pada `index.html` menggunakan `<router-link to="/about">` sudah beroperasi dan otomatis ter-_highlight_ ketika diakses.
+## Pertanyaan dan Tugas
+> **Pertanyaan:** 1. Selesaikan semua langkah praktikum di atas. 2. Tambahkan satu rute baru (/about) beserta komponen About.js baru yang berisi profil singkat Anda (Nama, NIM, Kelas, dan Foto/Avatar). Masukkan tautan rutenya ke dalam menu navigasi atas pada index.html. 3. Lakukan pengujian perpindahan halaman menu (Beranda, Kelola Artikel, dan About) dan pastikan browser tidak melakukan hard-reload (SPA bekerja).
+> **Jawaban:**
+> 1. Langkah instalasi Vue 3 sukses tanpa _error_.
+> 2. Rute `/about` sukses di daftarkan di `app.js` dan file komponen terpisah `About.js` telah ada di folder _components_. Tautan pada menu atas menggunakan elemen `<router-link to="/about">` beroperasi normal.
+> 3. Hasil pengujian menunjukkan perpindahan navigasi (*Routing*) antara Home, Artikel, dan About sangat mulus mengambil komponen dinamis `<router-view>` dan dipastikan _browser_ tidak merespon perpindahan layaknya web tradisional (_zero hard-reload_).
 
-**3. Lakukan pengujian perpindahan halaman menu (Beranda, Kelola Artikel, dan About) dan pastikan browser tidak melakukan hard-reload (SPA bekerja).**
-**Jawaban:** Hasil uji coba membuktikan perpindahan antara halaman Home, Artikel, dan About terjadi secara instan dengan mengambil komponen secara dinamis ke dalam `<router-view>` tanpa menimbulkan _hard-reload_ pada web _browser_.
+### Screenshot Hasil Kerja
+> **Ambil gambar screenshot jalannya program di web browser dan taruh di sini**
+> ![Screenshot](#)
 
 
+---
+
+# Praktikum 13 & 14: SPA Security, API Token Authentication & Interceptors
+
+## Penjelasan Praktikum
+Bagian akhir praktikum membahas pertahanan dan keamanan aplikasi (_Security_). Melindungi rute tertentu dari pengguna anonim (*Vue Navigation Guards*), serta membubuhkan pelindung berupa *JSON Web Token* / Autentikasi Kredensial untuk mencegah penyusup menembus sistem dari jalur belakang (API).
+
+## Langkah-langkah Utama
+- Implementasi `router.beforeEach` pada sistem Vue Router.
+- Membangun antarmuka _Login_ `Login.js`.
+- Menyimpan *Token* dan Status Autentikasi ke dalam `localStorage` _browser_.
+- Penggunaan **Axios Interceptors** untuk secara otomatis menyuntikkan _Header Authorization Bearer_ di setiap _request_ ke server.
+
+## Pertanyaan dan Tugas (Modul 13)
+> **Pertanyaan:** Analisis Alur Kerja `router.beforeEach` dan Axios HTTP Post.
+> **Jawaban:**
+> - **`router.beforeEach`**: Berfungsi sebagai pos satpam di sisi antarmuka (Client-Side). Sebelum halaman (misal `/artikel`) dimuat oleh browser, fungsi mencegat navigasi untuk memeriksa jejak sesi di _Local Storage_. Jika kunci ini tidak ada, pengguna otomatis ditolak dan diarahkan ke halaman `/login`.
+> - **Axios HTTP Post**: Saat di halaman login, fungsi mengemas kredensial lalu mengirimkannya ke backend API CI4. Jika berhasil divalidasi, server memberikan _Token_ untuk disimpan ke dalam memori browser.
+
+## Pertanyaan dan Tugas (Modul 14)
+> **Pertanyaan:** Kesimpulan Perbedaan Navigation Guards (Vue) vs Filters (CI4).
+> **Jawaban:**
+> - **Vue Router Navigation Guards (Sisi Klien):** Hanya berfokus pada **UI/Tampilan (Visual)** (menyembunyikan tampilan admin). Ini tidak dapat mencegah seorang _Hacker_ mengakses _database_ langsung menggunakan _Postman/cURL_.
+> - **CodeIgniter Filters (Sisi Server):** Merupakan **Benteng Pertahanan Utama (Data)**. Segala permintaan masuk akan ditahan oleh Filter jika tidak ada *Token* otentikasi yang valid.
+> Kombinasi keduanya menghasilkan perlindungan SPA yang utuh (_End-to-End Security_).
 
 ### Screenshot Hasil Kerja
 > **Ambil gambar screenshot jalannya program di web browser dan taruh di sini**
 > ![Screenshot](#)
 
----
-
-## Praktikum 13 & 14: SPA Security, API Token Authentication & Interceptors
-
-### Jawaban Pertanyaan dan Tugas - Modul 13
-
-**Analisis Alur Kerja `router.beforeEach` dan Axios HTTP Post:**
-- **`router.beforeEach`**: Berfungsi sebagai pos satpam di sisi antarmuka (Client-Side). Sebelum halaman (seperti `/artikel` atau `/about`) dimuat secara penuh oleh browser, fungsi ini mencegat navigasi tersebut untuk memeriksa apakah terdapat jejak sesi login (kunci `isLoggedIn`) di dalam _Local Storage_. Jika kunci ini tidak ada, pengguna otomatis ditolak dan diarahkan paksa ke halaman `/login`.
-- **Axios HTTP Post**: Berfungsi sebagai kurir pengantar pesan. Saat di halaman login, fungsi ini akan mengemas data _username_ dan _password_, lalu mengirimkannya ke backend CI4. Axios kemudian akan menunggu respons dari server; jika berhasil (status 200), Axios akan mengambil _Token Rahasia_ yang dikembalikan server untuk disimpan ke dalam memori browser.
-
----
-
-### Jawaban Pertanyaan dan Tugas - Modul 14
-
-**Kesimpulan Perbedaan Navigation Guards (Vue) vs Filters (CI4):**
-Perbedaan mendasarnya terletak pada letak pertahanannya:
-- **Vue Router Navigation Guards (Sisi Klien):** Pengamanan ini hanya berfokus pada **UI/Tampilan (Visual)**. Ini mencegah orang asing melihat halaman Dasbor Admin di browser. Namun, ini tidak bisa mencegah seorang _Hacker_ yang mahir dari mengakses atau memanipulasi _database_ secara langsung menggunakan aplikasi pengujian API seperti _Postman_ atau _cURL_ (tanpa melewati browser).
-- **CodeIgniter Filters (Sisi Server):** Ini adalah **Benteng Pertahanan Utama (Data)**. Sekalipun seseorang berhasil memanipulasi _browser_ untuk bisa membuka halaman Vue, ketika ia mencoba memanipulasi data melalui API Endpoint, permintaan tersebut akan langsung menembus ke server CI4. Di titik inilah `ApiAuthFilter` akan membanting pintu dan memblokir request tersebut dengan pesan *Error 401 Unauthorized* jika tidak disertai dengan _Token_ otentikasi yang sah.
-
-Kombinasi antara _Navigation Guards_ (menyembunyikan tampilan) dan _CI4 Filters_ (melindungi data) menghasilkan sistem aplikasi SPA yang kokoh secara menyeluruh (_End-to-End Security_).
-
-
-### Screenshot Hasil Kerja
-> **Ambil gambar screenshot jalannya program di web browser dan taruh di sini**
-> ![Screenshot](#)
